@@ -1,3 +1,7 @@
+package enums;
+
 public enum StudentDegree {
-    BACHELOR
+    BACHELOR,
+    MASTER,
+    PHD
 }

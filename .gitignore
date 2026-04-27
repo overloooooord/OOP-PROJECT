@@ -1,0 +1,16 @@
+# Compiled class files
+OOP/out/
+
+# Defense cheat sheets (не пушить!)
+DEFENSE_PERSON1.md
+DEFENSE_PERSON2.md
+DEFENSE_PERSON3.md
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db

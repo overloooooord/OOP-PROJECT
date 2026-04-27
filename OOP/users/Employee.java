@@ -1,12 +1,11 @@
+package users;
+
 import enums.UserRole;
-import java.util.ArrayList;
-import common.Message;
 
 public class Employee extends User {
     protected String employeeId;
     protected String department;
     protected double salary;
-    protected ArrayList<Message> inbox = new ArrayList<>();
 
     public Employee(String userId, String firstName, String lastName, String email,
                     String passwordHash, UserRole role,
@@ -17,11 +16,18 @@ public class Employee extends User {
         this.salary = salary;
     }
 
-    public void sendComplaint(String text) {
-        System.out.println("Complaint sent: " + text);
-    }
+    // Getters
+    public String getEmployeeId() { return employeeId; }
+    public String getDepartment() { return department; }
+    public double getSalary() { return salary; }
 
-    public void viewInbox() {
-        inbox.forEach(System.out::println);
+    // Setters
+    public void setDepartment(String department) { this.department = department; }
+    public void setSalary(double salary) { this.salary = salary; }
+
+    @Override
+    public String print() {
+        return "Employee{id=" + employeeId + ", name=" + firstName + " " + lastName +
+               ", dept=" + department + ", salary=" + salary + "}";
     }
 }
