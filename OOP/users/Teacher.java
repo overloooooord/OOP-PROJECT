@@ -1,12 +1,14 @@
 package users;
 
+import java.io.Serializable;
+
 import enums.*;
 import academic.Course;
 import academic.Mark;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Teacher extends Employee {
+public class Teacher extends Employee implements Serializable {
     private TeacherTitle title;
     private List<Course> courses = new ArrayList<>();
     private double rating;
@@ -24,7 +26,7 @@ public class Teacher extends Employee {
 
     public void addCourse(Course course) {
         courses.add(course);
-        course.setTeacher(this);
+        course.addTeacher(this);
         System.out.println("Teacher " + firstName + " assigned to " + course.getName());
     }
 

@@ -14,3 +14,11 @@ DEFENSE_PERSON3.md
 # OS
 .DS_Store
 Thumbs.db
+*.class
+.metadata/
+*.pdf
+*.rtf
+*.png
+defense_preparation.md
+*.dat
+main_explanation.md

@@ -1,5 +1,7 @@
 package users;
 
+import java.io.Serializable;
+
 import enums.*;
 import academic.Course;
 import academic.Mark;
@@ -9,7 +11,7 @@ import interfaces.Observer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Student extends User implements Observer {
+public class Student extends User implements Serializable, Observer {
     private String studentId;
     private int year;
     private StudentDegree degree;

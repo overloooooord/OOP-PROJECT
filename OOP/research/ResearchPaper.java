@@ -1,10 +1,12 @@
 package research;
 
+import java.io.Serializable;
+
 import interfaces.Printable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ResearchPaper implements Printable, Comparable<ResearchPaper> {
+public class ResearchPaper implements Serializable, Printable, Comparable<ResearchPaper> {
     private static int counter = 0;
     private String paperId;
     private String title;

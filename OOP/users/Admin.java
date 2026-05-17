@@ -1,11 +1,13 @@
 package users;
 
+import java.io.Serializable;
+
 import enums.UserRole;
 import system.Database;
 import system.Logger;
 import java.util.List;
 
-public class Admin extends User {
+public class Admin extends User implements Serializable {
 
     public Admin(String userId, String firstName, String lastName,
                  String email, String passwordHash) {

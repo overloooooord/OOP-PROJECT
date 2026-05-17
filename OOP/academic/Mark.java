@@ -1,9 +1,11 @@
 package academic;
 
+import java.io.Serializable;
+
 import users.Student;
 import interfaces.Printable;
 
-public class Mark implements Printable, Comparable<Mark> {
+public class Mark implements Serializable, Printable, Comparable<Mark> {
     private Student student;
     private Course course;
     private double att1;       // attestation 1 (max 30)

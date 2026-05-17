@@ -1,12 +1,14 @@
 package system;
 
+import java.io.Serializable;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 // Singleton pattern
-public class Logger {
+public class Logger implements Serializable {
     private static Logger instance;
     private List<String> logs = new ArrayList<>();
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");

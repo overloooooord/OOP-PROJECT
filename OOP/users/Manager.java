@@ -1,5 +1,7 @@
 package users;
 
+import java.io.Serializable;
+
 import enums.*;
 import academic.Course;
 import communication.News;
@@ -10,7 +12,7 @@ import interfaces.Observer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Manager extends Employee implements Observable {
+public class Manager extends Employee implements Serializable, Observable {
     private ManagerType managerType;
     private List<Observer> observerList = new ArrayList<>();
 

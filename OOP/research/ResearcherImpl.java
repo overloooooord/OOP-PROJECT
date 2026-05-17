@@ -1,10 +1,12 @@
 package research;
 
+import java.io.Serializable;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ResearcherImpl implements Researcher {
+public class ResearcherImpl implements Serializable, Researcher {
     private List<ResearchPaper> papers = new ArrayList<>();
     private List<ResearchProject> projects = new ArrayList<>();
 
@@ -50,11 +52,20 @@ public class ResearcherImpl implements Researcher {
     }
 
     public void printPapers() {
+        printPapers(null);
+    }
+
+    @Override
+    public void printPapers(java.util.Comparator<ResearchPaper> c) {
         if (papers.isEmpty()) {
             System.out.println("No research papers.");
             return;
         }
-        for (ResearchPaper p : papers) {
+        List<ResearchPaper> sortedPapers = new ArrayList<>(papers);
+        if (c != null) {
+            sortedPapers.sort(c);
+        }
+        for (ResearchPaper p : sortedPapers) {
             System.out.println("  " + p);
         }
     }

@@ -1,11 +1,13 @@
 package communication;
 
+import java.io.Serializable;
+
 import users.User;
 import interfaces.Printable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class News implements Printable {
+public class News implements Serializable, Printable {
     private static int counter = 0;
     private String newsId;
     private String title;

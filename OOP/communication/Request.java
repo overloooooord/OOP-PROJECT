@@ -1,10 +1,12 @@
 package communication;
 
+import java.io.Serializable;
+
 import enums.RequestStatus;
 import users.User;
 import interfaces.Printable;
 
-public class Request implements Printable {
+public class Request implements Serializable, Printable {
     private static int counter = 0;
     private String requestId;
     private User sender;

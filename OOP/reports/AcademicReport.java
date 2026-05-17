@@ -1,10 +1,12 @@
 package reports;
 
+import java.io.Serializable;
+
 import users.Student;
 import interfaces.Printable;
 import java.util.List;
 
-public class AcademicReport implements Printable {
+public class AcademicReport implements Serializable, Printable {
     private List<Student> students;
 
     public AcademicReport(List<Student> students) {

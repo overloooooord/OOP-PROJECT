@@ -8,4 +8,5 @@ public interface Researcher {
     List<ResearchPaper> getResearchPapers();
     List<ResearchProject> getResearchProjects();
     int calculateHIndex();
+    void printPapers(java.util.Comparator<ResearchPaper> c);
 }

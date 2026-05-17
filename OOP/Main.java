@@ -141,6 +141,7 @@ public class Main {
         System.out.println("\n--- 9. Research ---");
         ResearchEmployee researcher = new ResearchEmployee("U006", "Aidar", "Moldabay",
                 "aidar@kbtu.kz", "rpass", "E003", "CS", 700000);
+        admin.addUser(researcher);
 
         // Add papers with citations
         ResearchPaper paper1 = new ResearchPaper("ML in Education", "Aidar M.",
@@ -161,6 +162,12 @@ public class Main {
 
         System.out.println("H-Index: " + researcher.calculateHIndex());
         researcher.viewResearchInfo();
+
+        System.out.println("\n--- Sorted Papers (By Citations via Comparator Strategy) ---");
+        researcher.printPapers((p1, p2) -> Integer.compare(p2.getCitations(), p1.getCitations()));
+
+        System.out.println("\n--- Top Cited Researcher in University ---");
+        db.printTopCitedResearcher();
 
         // Try to start a project (needs h-index >= 3)
         try {

@@ -1,10 +1,12 @@
 package academic;
 
+import java.io.Serializable;
+
 import enums.LessonType;
 import users.Teacher;
 import interfaces.Printable;
 
-public class Lesson implements Printable {
+public class Lesson implements Serializable, Printable {
     private static int counter = 0;
     private String lessonId;
     private LessonType type;

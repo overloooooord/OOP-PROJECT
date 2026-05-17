@@ -1,10 +1,12 @@
 package system;
 
+import java.io.Serializable;
+
 import users.*;
 import enums.*;
 
 // Factory pattern
-public class UserFactory {
+public class UserFactory implements Serializable {
 
     public static User createUser(UserRole role, String userId, String firstName,
                                   String lastName, String email, String password) {

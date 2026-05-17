@@ -1,11 +1,13 @@
 package research;
 
+import java.io.Serializable;
+
 import users.Employee;
 import enums.UserRole;
 import exceptions.LowHIndexException;
 import java.util.List;
 
-public class ResearchEmployee extends Employee implements Researcher {
+public class ResearchEmployee extends Employee implements Serializable, Researcher {
     private ResearcherImpl researcherImpl = new ResearcherImpl();
     private static final int MIN_H_INDEX_FOR_PROJECT = 3;
 
@@ -39,6 +41,11 @@ public class ResearchEmployee extends Employee implements Researcher {
     @Override
     public int calculateHIndex() {
         return researcherImpl.calculateHIndex();
+    }
+
+    @Override
+    public void printPapers(java.util.Comparator<ResearchPaper> c) {
+        researcherImpl.printPapers(c);
     }
 
     public void startNewProject(String title, String description) throws LowHIndexException {

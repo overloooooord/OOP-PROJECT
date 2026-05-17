@@ -12,7 +12,7 @@ public class Course implements Printable, java.io.Serializable {
     private String name;
     private int credits;
     private int maxStudents;
-    private Teacher teacher;
+    private List<Teacher> teachers = new ArrayList<>();
     private List<Student> students = new ArrayList<>();
     private List<Lesson> lessons = new ArrayList<>();
 
@@ -35,13 +35,15 @@ public class Course implements Printable, java.io.Serializable {
         students.remove(student);
     }
 
-    public void addLesson(LessonType type, String topic) {
+    public void addLesson(LessonType type, String topic, Teacher teacher) {
         Lesson lesson = new Lesson(type, topic, teacher);
         lessons.add(lesson);
     }
 
-    public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
+    public void addTeacher(Teacher teacher) {
+        if (!teachers.contains(teacher)) {
+            this.teachers.add(teacher);
+        }
     }
 
     // Getters
@@ -49,7 +51,7 @@ public class Course implements Printable, java.io.Serializable {
     public String getName() { return name; }
     public int getCredits() { return credits; }
     public int getMaxStudents() { return maxStudents; }
-    public Teacher getTeacher() { return teacher; }
+    public List<Teacher> getTeachers() { return teachers; }
     public List<Student> getStudents() { return students; }
     public List<Lesson> getLessons() { return lessons; }
 

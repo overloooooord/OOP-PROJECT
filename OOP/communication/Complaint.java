@@ -1,10 +1,12 @@
 package communication;
 
+import java.io.Serializable;
+
 import enums.RequestStatus;
 import users.User;
 import interfaces.Printable;
 
-public class Complaint implements Printable {
+public class Complaint implements Serializable, Printable {
     private static int counter = 0;
     private String complaintId;
     private User sender;

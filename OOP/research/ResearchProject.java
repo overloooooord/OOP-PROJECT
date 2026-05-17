@@ -1,10 +1,12 @@
 package research;
 
+import java.io.Serializable;
+
 import interfaces.Printable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ResearchProject implements Printable {
+public class ResearchProject implements Serializable, Printable {
     private static int counter = 0;
     private String projectId;
     private String title;
